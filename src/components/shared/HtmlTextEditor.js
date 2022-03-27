@@ -12,6 +12,8 @@ class HtmlTextEditor extends React.Component {
             html: '<html>\n\t<head>\n\t\t<title>HTML 101</title>\n\t</head>\n\t<body>\n\t\t<p>test</p>\n\t</body>\n</html>',
 		}
 
+		this.event = new CustomEvent('html_updated');
+
 		this.handleResize = this.handleResize.bind(this);
 	}
 
@@ -35,6 +37,8 @@ class HtmlTextEditor extends React.Component {
             iframe.contentWindow.document.open();
             iframe.contentWindow.document.write(this.state.html);
             iframe.contentWindow.document.close();
+
+			window.dispatchEvent(this.event);
         }
 
 		return (

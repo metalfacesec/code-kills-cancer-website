@@ -1,6 +1,7 @@
 import './App.css';
 
 import HtmlTextEditor from './components/shared/HtmlTextEditor';
+import CssTextEditor from './components/shared/CssTextEditor';
 
 function App() {
 	return (
@@ -12,7 +13,9 @@ function App() {
 				<div id="code-mirror-parent" className='main-row'>
 					<HtmlTextEditor />
 				</div>
-				<div className='main-row'></div>
+				<div className='main-row'>
+					<CssTextEditor />
+				</div>
 			</div>
 		</div>
 	);

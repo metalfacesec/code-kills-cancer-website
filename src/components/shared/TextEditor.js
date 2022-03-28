@@ -1,7 +1,10 @@
 import React from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { oneDark } from '@codemirror/theme-one-dark';
-import { javascript } from '@codemirror/lang-javascript';
+
+import { css } from '@codemirror/lang-css';
+import { html } from '@codemirror/lang-html';
+// import { javascript } from '@codemirror/lang-javascript';
 
 class TextEditor extends React.Component {
 	constructor(props) {
@@ -10,6 +13,12 @@ class TextEditor extends React.Component {
 		this.state = {
 			height: 100
 		}
+
+		this.extension = [css()];
+		if (this.props.type === 'html') {
+			this.extension = [html()];
+		}
+		
 
 		this.handleResize = this.handleResize.bind(this);
 	}
@@ -32,14 +41,12 @@ class TextEditor extends React.Component {
 		return (
 			<div style={{height: 'calc(100% - 1px)', width: 'calc(100% - 1px)', 'border-left': '1px solid black', 'border-bottom': '1px solid black'}}>
 				<CodeMirror
-					value="console.log('hello world!');"
+					value={this.props.initialValue}
 					height="100%"
 					maxHeight={this.state.height + 'px'}
 					theme={oneDark}
-					extensions={[javascript({ jsx: true })]}
-					onChange={(value, viewUpdate) => {
-						console.log('value:', value);
-					}}
+					extensions={this.extension}
+					onChange={this.props.onValueUpdate}
 				/>
 			</div>
 		);

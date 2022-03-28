@@ -1,0 +1,20 @@
+.main-col {
+	width: 50%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.main-row {
+	width: 100%;
+	height: 50%;
+}
+
+.cm-scroller {
+	overflow: hidden !important;
+}
+
+#code-results {
+	height: 100%;
+}

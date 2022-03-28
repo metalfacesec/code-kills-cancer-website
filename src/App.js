@@ -1,22 +1,11 @@
-import './App.css';
+import GameBoard from './components/shared/GameBoard';
 
-import HtmlTextEditor from './components/shared/HtmlTextEditor';
-import CssTextEditor from './components/shared/CssTextEditor';
+import './App.css';
 
 function App() {
 	return (
 		<div className='app-container'>
-			<div className='main-col'>
-				<iframe id="code-results"></iframe>
-			</div>
-			<div className='main-col'>
-				<div id="code-mirror-parent" className='main-row'>
-					<HtmlTextEditor />
-				</div>
-				<div className='main-row'>
-					<CssTextEditor />
-				</div>
-			</div>
+			<GameBoard />
 		</div>
 	);
 }

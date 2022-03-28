@@ -64,20 +64,6 @@ class GameBoard extends React.Component {
 
         this.iframe.contentWindow.document.querySelector('head').appendChild(new_elem);
     }
-    
-	// handleResize() {
-	// 	this.setState({
-	// 		height: document.getElementById('code-mirror-parent').clientHeight - 1
-	// 	});
-	// }
-
-	// componentDidMount() {
-	// 	window.addEventListener('resize', this.handleResize);
-
-	// 	this.setState({
-	// 		height: document.getElementById('code-mirror-parent').clientHeight - 1
-	// 	});
-	// }
 	
 	render() {
 		return (
